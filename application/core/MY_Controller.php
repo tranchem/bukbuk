@@ -31,6 +31,39 @@ class Layout extends CI_Controller {
 		$this->load->view ( 'components/page_not_found' );
 	}
 }
+
+class LayoutAdmin extends CI_Controller {
+	function __construct() {
+		parent::__construct ();
+		// $session_data = $this->session->userdata ( 'logged_in' );
+		
+		// if (! $session_data ['user_id']) {
+		// 	redirect ( '/verifylogin', 'refresh' );
+		// 	exit ();
+		// }
+
+		// $this->load->helper ( 'url' );
+		// $this->load->helper ( 'text' );
+
+		// $this->user_id = ( int ) $session_data ['user_id'];
+		// $this->perms = ( int ) $session_data ['role_id'];
+		// $this->user_name = $session_data['user_name'];
+
+		// // $this->_data ['title'] = 'GetFly Managers';
+		// $this->_data ['user_info'] = $session_data;
+	}
+	public function render() {
+		$this->_data ['header'] = $this->load->view ( 'admin/header', [ ], TRUE );
+		$this->_data ['sidebar'] = $this->load->view ( 'admin/sidebar', [ ], TRUE );
+		$this->_data ['footer'] = $this->load->view ( 'admin/footer', [ ], TRUE );
+
+		$this->load->view ( 'admin/index', $this->_data );
+	}
+	public function resposeNotFound() {
+		$this->load->view ( 'components/page_not_found' );
+	}
+}
+
 class PublicApi extends REST_Controller {
 	function __construct() {
 		parent::__construct ();
