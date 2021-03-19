@@ -1,0 +1,456 @@
+.thongtintheme{
+    position: absolute;
+    top: 6px;
+    right: 20px;
+    overflow: hidden;
+    left: auto;
+    color: #fff;
+    padding-top: 30px;
+    text-align: left;
+    font-weight: bold;
+}
+img{
+    max-width: 100%
+}
+
+.login h1 a{
+    background-image: none,url(../images/logovpw.png) !important;
+    width: 195px !important;
+    background-size: 100%;
+    margin: auto !important;
+margin-bottom: 20px !important;
+}
+
+body.wp-admin{
+background: url(../images/geometry2.8b9eb18d.png)!important;
+}
+#login{
+    padding: 30px 30px;
+    float: none;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+    display: block;
+    margin-top: 50px
+}
+.login form{
+    box-shadow: none
+}
+#login{
+}
+.login form .input{
+    height: 40px;
+    border: 1px solid #ebebeb;
+    padding: 0 20px;
+    width: 100%;
+    border-radius: 5px;
+    color: #656565;
+    float: none;
+    font-size: 13px;
+    margin: 10px 0px;
+}
+.login label {
+    color: #4f4f4f;
+    font-size: 15px;
+}
+.wp-core-ui #login .button-primary{
+    margin: 0;
+    padding: 15px 0 !important;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    width: 140px;
+    font-size: 14px;
+    line-height: 5px !important;
+    height: 40px !important;
+        background: #ffa00f;
+    box-shadow: none;
+    text-shadow: none;
+}
+.login form {
+    padding: 30px 0px;
+    border-bottom: 1px solid #eaeaea;
+}
+#adminmenuback{
+    background-color: #293949;
+}
+#adminmenu div.wp-menu-image:before {
+color: #8f939e;
+}
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap{
+    background-color: #293949;  
+    width: 180px  
+}
+#adminmenu div.wp-menu-image{
+    font-size: 15px;
+}
+.folded ul#adminmenu a.wp-has-current-submenu:after, .folded ul#adminmenu>li a.current:after{
+	display:none;
+}
+#wpcontent, #wpfooter{
+    margin-left: 180px
+}
+div.wp-menu-image:before{
+    font-size: 15px
+}
+#adminmenu li.menu-top{
+    min-height: 30px
+}
+#adminmenu div.wp-menu-name {
+}
+#adminmenu li.menu-top {
+    border: none;
+    min-height: 30px;
+    position: relative;
+    clear: both;
+}
+#adminmenu .wp-submenu{
+    left: 180px
+}
+#wpadminbar{
+    background: #293949;
+}
+#adminmenu a{
+    color: #8f939e;
+}
+#adminmenu .wp-has-current-submenu ul>li>a, .folded #adminmenu li.menu-top .wp-submenu>li>a {
+    padding: 6px 25px;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu{
+    color: #fff;
+    border-left: solid 4px #1abc9c;
+    background-color: #ffa00f;
+}
+#adminmenu li.menu-top a:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus{
+    color: #fff;
+    border-left: solid 4px #1abc9c;
+    background: #ffa00f !important;
+}
+#screen-meta-links .show-settings:after{
+    color: #ffa00f !important;
+}
+
+#adminmenu a{
+        border-left: solid 4px #293949;
+}
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus{
+    background: #ffa00f !important;
+}
+#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before{
+    color: #fff
+}
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu{
+    background: #2e4051;
+}
+#wpadminbar .ab-empty-item, #wpadminbar a.ab-item, #wpadminbar>#wp-toolbar span.ab-label, #wpadminbar>#wp-toolbar span.noticon{
+    color: #fff
+}
+#wpadminbar #adminbarsearch:before, #wpadminbar .ab-icon:before, #wpadminbar .ab-item:before{
+    color: #fff
+}
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus{
+    background: #293949;
+    color: #fff;
+}
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input{
+    background: #293949;
+    color: #fff;    
+}
+.title-login-form-template{
+       display: block;
+    margin: 10px 0px 20px 0px;
+    text-transform: uppercase;
+    color: #ffa00f;
+    font-weight: bold;
+    line-height: 27px;
+text-align: center;
+}
+#wpadminbar .vsi-logo-toolbar-page{
+    width: 26px;
+    padding-top: 7px !important;
+        text-align: right;
+    margin-left: 10px;
+}
+#wpadminbar #wp-admin-bar-view-site{
+    position: relative;
+
+}
+#wpadminbar .vsi-logo-toolbar-page a{
+    background: url("../images/icon.png") !important;
+    background-size: contain !important;
+    width: 22px;
+    height: 20px;
+    padding: 0px !important;
+}
+#wpadminbar .vsi-logo-toolbar-page ul li a{
+    background: none !important;
+    height:inherit !important;
+    width: inherit !important;
+}
+#wpadminbar .vsi-logo-toolbar-page ul li{
+    width: 100% !important;
+    margin: 0px !important;
+    text-align: left !important;
+    padding: 0px 5px 0px 15px !important;
+}
+#wpadminbar .vsi-logo-toolbar-page .ab-submenu{
+    width: 200px !important;
+}
+.list-button-admin-as-software a{
+    margin-right: 10px;
+    color: #ffa00f;
+    display: inline-block;
+}
+.list-button-admin-as-software{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.list-button-admin-as-software a .dashicons{
+        vertical-align: middle;
+}
+.customize-control-radio-image .ui-button {
+    margin:        0;
+    border-radius: 0;
+    border:        none;
+    background:    transparent;
+}
+
+.customize-control-radio-image .ui-button-text { padding: 0; }
+
+.customize-control-radio-image img {
+    box-sizing: border-box;
+    max-width:  100%;
+    height:     auto;
+    padding:    1px;
+    border:     4px solid transparent;
+}
+
+.customize-control-radio-image img:hover,
+.customize-control-radio-image img:focus {
+    border-color: #ddd;
+}
+
+.customize-control-radio-image .ui-state-active img {
+    border-color: #00a0d2;
+}
+
+.list-style-radio-images li{
+    display: inline-block;
+    margin: 5px 10px;
+}
+.customize-control-radio-image img{
+    vertical-align: middle;
+}
+li#accordion-section-themes{
+    display: none !important;
+}
+.recaptcha_google{
+    display: block;
+    margin:20px 0px;
+}
+ul.core-updates{
+    display: none !important;
+}
+
+
+.loader {
+    height: 20px;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.loader--dot {
+    animation-name: loader;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: black;
+    position: absolute;
+    border: 2px solid white;
+}
+.loader--dot:first-child {
+    background-color: #8cc759;
+    animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+    background-color: #8c6daf;
+    animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+    background-color: #ef5d74;
+    animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+    background-color: #f9a74b;
+    animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+    background-color: #60beeb;
+    animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+    background-color: #fbef5a;
+    animation-delay: 0s;
+}
+.loader--text {
+    position: absolute;
+    top: 200%;
+    left: 0;
+    right: 0;
+    width: 4rem;
+    margin: auto;
+}
+.loader--text:after {
+    content: "Loading";
+    font-weight: bold;
+    animation-name: loading-text;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loading-text {
+    0% {
+        content: "Loading";
+    }
+    25% {
+        content: "Loading.";
+    }
+    50% {
+        content: "Loading..";
+    }
+    75% {
+        content: "Loading...";
+    }
+}
+
+.loadding-replace-keywords{
+    position: relative;
+    display: none;
+}
+.loadding-replace-keywords.showloadding{
+    display: inline-block;
+}
+.box-import-export{
+    margin-top: 20px;
+    font-size: 14px;
+}
+.box-import-export h1{
+    font-weight: 600;
+}
+.box-import-export .wrap{
+    margin:15px 0px !important;
+}
+.box-import-export .setting-admin-as-plugins ul.tabs li{
+    font-size: 15px;
+    margin: 0px;
+    margin-left: -5px;
+    height: auto;
+    line-height: inherit;
+    padding: 9px 15px;
+}
+.box-import-export .setting-admin-as-plugins ul.tabs li:first-child{
+    margin-left: 0px;
+}
+.box-import-export .tab_content{
+    padding:0px;
+}
+.box-import-export .tab_content p{
+    margin:0px 0px 5px 0px;
+}
+.box-import-export .tab_container{
+    background: transparent;
+    border:none;
+    overflow: inherit;
+}
+.box-import-export .setting-admin-as-plugins ul.tabs{
+    border:none;
+}
+.box-import-export .setting-admin-as-plugins .tab_container .content-tab{
+    padding:20px 0px;
+}
+.box-import-export .setting-admin-as-plugins ul.tabs li.active{
+    border-bottom: 1px solid #ccc;
+}
+.box-import-export button.btn-export-import{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.process-bar-export{
+    clear: both;
+    width: calc(100% - 100px);
+    margin: 30px 0px 15px 30px;
+    height: 12px;
+    background: #CCC;
+    position: relative;
+    display: none;
+}
+.process-bar-export:before{
+    content: '0%';
+    position: absolute;
+    left: -30px;
+    top: -3px;
+    font-size: 16px;
+}
+.process-bar-export:after{
+    content: '100%';
+    position: absolute;
+    right: -50px;
+    font-size: 16px;
+    top:-3px;
+}
+.process-bar-export span{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    background: #ffa00f;
+    width: 0px;
+    height: 100%;
+    transition: all 0.2s;
+}
+.box-input-upload-file{
+    display: block;
+    clear: both;
+    margin: 20px 0px;
+    border: 2px dashed #afc0f3;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.box-input-upload-file #importfile{
+    display: none;
+}
+.box-input-upload-file span.text{
+    display: none;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.box-input-upload-file span.span-action{
+    font-size: 16px;
+    font-weight: 600;
+    color: #999;
+    padding: 10px 30px;
+    border: 1px dashed #999;
+}

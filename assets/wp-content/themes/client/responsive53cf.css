@@ -1,0 +1,32 @@
+@media (min-width: 1200px){
+	.container {
+    max-width: 1200px;
+	}
+	.col1{
+		    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 22.333333%;
+    max-width: 22.333333%;
+	}
+	.col2{
+		    -ms-flex: 0 0 64.666667%;
+    flex: 0 0 77.666667%;
+    max-width: 77.666667%;
+	}
+}
+@media(max-width: 768px){
+	.header-template .row{
+		margin: 0px;
+	}
+	.header-template .left-logo{
+		    align-self: center;
+	}
+	.box1{
+		margin-top: 10px !important;
+	}
+	.header-template .left-logo a{
+		margin-top: 0px !important;
+	}
+	.title-box-content-info{
+		font-size: 24px;
+	}
+}
