@@ -83,7 +83,7 @@ class Booking extends Layout
 			echo "
         <script>
             window.alert('Đặt bàn thành công!');
-            window.location.href = './../menu';
+			history.go(-1);
         </script>
     ";
 		} else {
