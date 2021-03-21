@@ -2,7 +2,7 @@
  <div class="container-fluid">
 
      <!-- Page Heading -->
-     <a href=<?= base_url('admin/booking_add') ?> class="float-right btn btn-success">Thêm mới</a>
+     <a href=<?= base_url('admin/bôking_add') ?> class="float-right btn btn-success">Thêm mới</a>
      <h1 class="h3 mb-2 text-gray-800">Đặt bàn</h1>
      <div></div>
      <div class="form-group">
@@ -50,7 +50,7 @@
                                      <a href="<?= base_url('admin/booking_delete?id='.$item->id_booking.'')  ?>" class="btn btn-danger">Xóa</a>
                                  </td>
                              </tr>
-                         <?php } ?>
+                             <?php } ?>
                      </tbody>
                  </table>
              </div>
