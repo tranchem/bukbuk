@@ -35,22 +35,28 @@ class Layout extends CI_Controller {
 class LayoutAdmin extends CI_Controller {
 	function __construct() {
 		parent::__construct ();
-		// $session_data = $this->session->userdata ( 'logged_in' );
+		$session_data = $this->session->userdata ( 'logged_in' );
+		// var_dump($this->session->userdata());
+		// var_dump($session_data);
+
+		// session_destroy();
+		// die();
 		
-		// if (! $session_data ['user_id']) {
-		// 	redirect ( '/verifylogin', 'refresh' );
-		// 	exit ();
-		// }
+		if (! $session_data ['id_user']) {
+			redirect ( '/login', 'refresh' );
+			exit ();
+		}
 
 		// $this->load->helper ( 'url' );
 		// $this->load->helper ( 'text' );
 
-		// $this->user_id = ( int ) $session_data ['user_id'];
+		$this->id_user = ( int ) $session_data ['id_user'];
 		// $this->perms = ( int ) $session_data ['role_id'];
-		// $this->user_name = $session_data['user_name'];
+		// $this->user_name = $session_data['username'];
+		$this->name = $session_data['name'];
 
-		// // $this->_data ['title'] = 'GetFly Managers';
-		// $this->_data ['user_info'] = $session_data;
+		// $this->_data ['title'] = 'GetFly Managers';
+		$this->_data ['user_info'] = $session_data;
 	}
 	public function render() {
 		$this->_data ['header'] = $this->load->view ( 'admin/header', [ ], TRUE );

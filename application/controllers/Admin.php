@@ -23,6 +23,7 @@ class Admin extends LayoutAdmin
 		$this->db->select('b.id_booking, b.id_restaurant, b.time, b.amount, b.name, b.phone_number, b.email, b.status, r.name as name_restaurant');
 		$this->db->from('tbl_booking b');
 		$this->db->join('tbl_restaurant r', 'r.id_restaurant = b.id_restaurant');
+		$this->db->order_by('time', 'DESC');
 		$query = $this->db->get();
 		// $result_booking = $this->db->get('tbl_booking')->result();
 		$result_booking = $query->result();

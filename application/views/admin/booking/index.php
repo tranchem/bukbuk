@@ -4,6 +4,10 @@
      <!-- Page Heading -->
      <a href=<?= base_url('admin/booking_add') ?> class="float-right btn btn-success">Thêm mới</a>
      <h1 class="h3 mb-2 text-gray-800">Đặt bàn</h1>
+     <div></div>
+     <div class="form-group">
+        <input class="form-control" type="datetime-local" />
+     </div>
 
      <!-- DataTales Example -->
      <div class="card shadow mb-4">
