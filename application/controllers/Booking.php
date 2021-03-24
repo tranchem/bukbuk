@@ -28,6 +28,7 @@ class Booking extends Layout
 		$name = $this->input->post('name');
 		$phone_number = $this->input->post('phone_number');
 		$email = $this->input->post('email');
+		$status = $this->input->post('status');
 
 		$data = array(
 			'id_restaurant' =>  $id_restaurant,
@@ -35,7 +36,8 @@ class Booking extends Layout
 			'amount' =>  $amount,
 			'name' =>  $name,
 			'phone_number' =>  $phone_number,
-			'email' =>  $email
+			'email' =>  $email,
+			'status' => $status ? $status : 1
 		);
 
 		$this->db->insert('tbl_booking', $data);
@@ -49,9 +51,6 @@ class Booking extends Layout
 		$this->load->library('email');
 		$this->email->from('tuvantran.it@gmail.com', 'Buk buk');
 		$this->email->to('tuvantran.it@gmail.com');
-		// $this->email->cc('another@another-example.com');
-		// $this->email->bcc('them@their-example.com');
-
 		$this->email->subject('Bạn nhận dược đơn đặt bàn mới');
 		$body = "
             <html>
@@ -75,10 +74,6 @@ class Booking extends Layout
             </html>
         ";
 		$this->email->message($body);
-
-		// $result = $this->email->send();
-
-		// var_dump($result);
 		if ($this->email->send()) {
 			echo "
         <script>
@@ -90,6 +85,34 @@ class Booking extends Layout
 			show_error($this->email->print_debugger());
 		}
 
+		//Gui cho khach hang
+		$this->email->clear();
+		$this->email->from('tuvantran.it@gmail.com', 'Buk buk');
+		$this->email->to($email);
+		$this->email->subject('Buk Buk - Đơn đặt bàn');
+		$body = "
+            <html>
+            <head>
+            <title>HTML email</title>
+            </head>
+            <body>
+        ";
+		$body .= "<p>Cảm ơn bạn đã quan tâm đến sản phẩm của Buk Buk. Đơn đặt bàn của bạn đang được chúng tôi xử lý. Vui lòng xác nhận khi có nhân viên liên lạc tới bạn.</p>";
+		$body .= "<b>Thông tin đặt bàn</b>";
+		$body .= "
+			<p>Họ tên: ".$name."</p>
+			<p>Điện thoại: ".$phone_number."</p>
+			<p>Email: ".$email."</p>
+			<p>Nhà hàng: ".$item_restaurant[0]['name']."</p>
+			<p>Thời gian: ".$time."</p>
+			<p>Số khách: ".$amount."</p>
+		";
+		$body .= "
+            </body>
+            </html>
+        ";
+		$this->email->message($body);
+		$this->email->send();
 		// die();
 	}
 }

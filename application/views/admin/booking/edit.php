@@ -13,7 +13,7 @@
          </div>
          <div class="card-body">
              <form style="font-size: 14px" method="post" role="form" id="thongtin_khachhang" action="<?= base_url('admin/booking_edit_action') ?>" class="form-horizontal" data-bv-message="This value is not valid" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
-                <input type="hidden" name="id_booking" value=<?= $id_booking ?> />
+                 <input type="hidden" name="id_booking" value=<?= $id_booking ?> />
                  <div class="form-group">
                      <div class="col-sm-12">
                          <select style="font-size: 14px" name="id_restaurant" id="id_restaurant" class="form-control " required data-bv-notempty-message="Thông tin bắt buộc">
@@ -120,10 +120,15 @@
                  </div>
                  <div class="form-group">
                      <div class="col-sm-12">
-                         Xác nhận đặt bàn
-                         <div class="custom-control custom-switch">
-                             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="status" <?= $booking[0]->status == 1 ? 'checked' : '' ?>>
-                             <label class="custom-control-label" for="customSwitch1"></label>
+                         Trạng thái
+                         <div class="form-group">
+                             <select name="status" id="status" class="form-control">
+                                 <option value='1' <?= $booking[0]->status == 1 ? ' selected="selected"' : '' ?>>Chờ xử lý</option>
+                                 <option value='2' <?= $booking[0]->status == 2 ? ' selected="selected"' : '' ?>>Đã xác nhận</option>
+                                 <option value='3' <?= $booking[0]->status == 3 ? ' selected="selected"' : '' ?>>Thành công</option>
+                                 <option value='4' <?= $booking[0]->status == 4 ? ' selected="selected"' : '' ?>>Thất bại</option>
+                                 <option value='5' <?= $booking[0]->status == 5 ? ' selected="selected"' : '' ?>>Hủy</option>
+                             </select>
                          </div>
                      </div>
                  </div>

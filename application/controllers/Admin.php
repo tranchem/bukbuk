@@ -14,17 +14,14 @@ class Admin extends LayoutAdmin
 	public function menu()
 	{
 		$query = $this->db->get('tbl_menu');
-		// $this->load->view('layout/index');
 		$result_menu = $query->result();
 		$this->_data['main_content'] = $this->load->view('admin/menu/index', ['menu' => $result_menu], TRUE);
-		 $this->render();
+		$this->render();
 	}
 
 	public function menu_add()
 	{
-		$query = $this->db->get('tbl_menu');
-		$data['menu'] = $query->result();
-		$this->_data['main_content'] = $this->load->view('admin/menu/add', $data, TRUE);
+		$this->_data['main_content'] = $this->load->view('admin/menu/add', [], TRUE);
 		$this->render();
 	}
 
@@ -42,12 +39,11 @@ class Admin extends LayoutAdmin
 		if ($this->db->insert('tbl_menu', $data)) {
 			echo "
         <script>
-            window.alert('Cập nhật thành công!');
-			window.location.href = 'menu';
+            window.alert('Thêm mới thành công!');
+			window.location.href = document.referrer;
         </script>
     ";
 		}
-		// $item_restaurant = $this->db->get_where('tbl_restaurant', array('id_restaurant' => $id_restaurant))->result_array();
 	}
 
 	public function menu_edit()
@@ -55,8 +51,7 @@ class Admin extends LayoutAdmin
 		$id_menu = $this->input->get('id');
 		$query = $this->db->get_where('tbl_menu', array('id_menu' => $id_menu));
 		$result = $query->result();
-		$query = $this->db->get('tbl_menu');
-		$data['main_content'] = $query->result();
+		$query = $this->db->get('tbl_menu');;
 		$data['menu'] = $result;
 		$data['id_menu'] = $id_menu;
 
@@ -84,7 +79,6 @@ class Admin extends LayoutAdmin
         </script>
     ";
 		}
-		// $item_restaurant = $this->db->get_where('tbl_restaurant', array('id_restaurant' => $id_restaurant))->result_array();
 	}
 
 	public function menu_delete()
@@ -101,18 +95,39 @@ class Admin extends LayoutAdmin
 
 	public function booking()
 	{
+		$status = $this->input->get('status');
+		$start_time = $this->input->get('start_time');
+		$end_time = $this->input->get('end_time');
+		$id_restaurant = $this->input->get('id_restaurant');
 		$this->db->select('b.id_booking, b.id_restaurant, b.time, b.amount, b.name, b.phone_number, b.email, b.status, r.name as name_restaurant');
 		$this->db->from('tbl_booking b');
 		$this->db->join('tbl_restaurant r', 'r.id_restaurant = b.id_restaurant');
+		if ($status) {
+			$this->db->where('status', $status);
+		}
+		if ($start_time) {
+			$this->db->where('DATE(time) >=', $start_time);
+		}
+		if ($end_time) {
+			$this->db->where('DATE(time) <=', $end_time);
+		}
+		if($id_restaurant) {
+			$this->db->where('r.id_restaurant', $id_restaurant);
+		}
 		$this->db->order_by('time', 'DESC');
 		$query = $this->db->get();
 		// $result_booking = $this->db->get('tbl_booking')->result();
 		$result_booking = $query->result();
+		$restaurant = $this->db->get('tbl_restaurant')->result();
 
-		// var_dump($result_booking[0]);
-		// die();
+		$data['booking'] = $result_booking;
+		$data['status'] = $status;
+		$data['start_time'] = $start_time;
+		$data['end_time'] = $end_time;
+		$data['id_restaurant'] = $id_restaurant;
+		$data['restaurant'] = $restaurant;
 
-		$this->_data['main_content'] = $this->load->view('admin/booking/index', ['booking' => $result_booking], TRUE);
+		$this->_data['main_content'] = $this->load->view('admin/booking/index', $data, TRUE);
 		$this->render();
 	}
 
@@ -149,7 +164,7 @@ class Admin extends LayoutAdmin
 		$name = $this->input->post('name');
 		$phone_number = $this->input->post('phone_number');
 		$email = $this->input->post('email');
-		$status = $this->input->post('status') == 'on' ? 1 : 0;
+		$status = $this->input->post('status');
 
 		$data = array(
 			'id_restaurant' =>  $id_restaurant,
@@ -269,7 +284,7 @@ class Admin extends LayoutAdmin
 			'id_menu' =>  $id_menu,
 			'name' =>  $name,
 			'image' =>  $image,
-			
+
 		);
 		$this->db->where('id_product', $id_product);
 		if ($this->db->update('tbl_product', $data)) {
@@ -281,5 +296,88 @@ class Admin extends LayoutAdmin
     ";
 		}
 		// $item_restaurant = $this->db->get_where('tbl_restaurant', array('id_restaurant' => $id_restaurant))->result_array();
+	}
+
+	public function restaurant()
+	{
+		$query = $this->db->get('tbl_restaurant');
+		// $result_booking = $this->db->get('tbl_booking')->result();
+		$result_restaurant = $query->result();
+
+		// var_dump($result_restaurant[0]);
+		// die();
+
+		$this->_data['main_content'] = $this->load->view('admin/restaurant/index', ['restaurant' => $result_restaurant], TRUE);
+		$this->render();
+	}
+
+	public function restaurant_add()
+	{
+		$this->_data['main_content'] = $this->load->view('admin/restaurant/add', [], TRUE);
+		$this->render();
+	}
+
+	public function restaurant_add_action()
+	{
+		$name = $this->input->post('name');
+
+		$data = array(
+			'name' =>  $name
+		);
+
+		$this->db->insert('tbl_restaurant', $data);
+		echo "
+        <script>
+            window.alert('Thêm mới thành công!');
+			window.location.href = document.referrer;
+        </script>
+    ";
+	}
+
+	public function restaurant_edit()
+	{
+		$id_restaurant = $this->input->get('id');
+
+		$query = $this->db->get_where('tbl_restaurant', array('id_restaurant' => $id_restaurant));
+		$result = $query->result();
+		$data['restaurant'] = $result;
+		$data['id_restaurant'] = $id_restaurant;
+
+		// var_dump($result);
+		$this->_data['main_content'] = $this->load->view('admin/restaurant/edit', $data, TRUE);
+		$this->render();
+	}
+
+	public function restaurant_edit_action()
+	{
+		// var_dump($this->input->post());die();
+		$id_restaurant = $this->input->post('id_restaurant');
+		$name = $this->input->post('name');
+
+		$data = array(
+			'name' =>  $name
+		);
+		$this->db->where('id_restaurant', $id_restaurant);
+		if ($this->db->update('tbl_restaurant', $data)) {
+			echo "
+        <script>
+            window.alert('Cập nhật thành công!');
+			window.location.href = 'restaurant';
+        </script>
+    ";
+		}
+		// $item_restaurant = $this->db->get_where('tbl_restaurant', array('id_restaurant' => $id_restaurant))->result_array();
+	}
+
+	public function restaurant_delete()
+	{
+		$id_restaurant = $this->input->get('id');
+		$this->db->delete('tbl_restaurant', array('id_restaurant' => $id_restaurant));
+		echo "
+        <script>
+            window.alert('Xóa thành công!');
+			window.location.href = document.referrer;
+        </script>
+    ";
 	}
 }

@@ -30,9 +30,6 @@
                             <li id="menu-item-230"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a
                                     href="<?= base_url('contact') ?>">LIÊN HỆ</a></li>
-                            <li id="menu-item-196"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a
-                                    href="<?= base_url('franchise') ?>">NHƯỢNG QUYỀN</a></li>
                         </ul>
                     </nav>
 

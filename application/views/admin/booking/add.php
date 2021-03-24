@@ -117,15 +117,20 @@
                          <input style="font-size: 14px" type="email" class="form-control " required data-bv-notempty-message="Thông tin bắt buộc" data-bv-emailaddress-message="Không đúng định dạng email" name="email" id="email" placeholder="Email">
                      </div>
                  </div>
-                 <!-- <div class="form-group">
-
-                                            <div class="col-sm-5"><input style="font-size: 14px" type="input_capt" class="form-control " required data-bv-notempty-message="Thông tin bắt buộc" name="input_capt" id="input_capt" placeholder="Nhập lại mã bên cạnh"></div>
-                                            <div class="col-sm-7"><img src="captcha/captcha.jpg" class="img-responsive" /> </div>
-
-
-                                        </div> -->
-
-
+                 <div class="form-group">
+                     <div class="col-sm-12">
+                         Trạng thái
+                         <div class="form-group">
+                             <select name="status" id="status" class="form-control">
+                                 <option value='1'>Chờ xử lý</option>
+                                 <option value='2'>Đã xác nhận</option>
+                                 <option value='3'>Thành công</option>
+                                 <option value='4'>Thất bại</option>
+                                 <option value='5'>Hủy</option>
+                             </select>
+                         </div>
+                     </div>
+                 </div>
 
                  <div class="text-center">
                      <button type="submit" class="btn btn-default btn-submit  pull-center" name="datban" style="background-color:#D71A21;color:#fff;font-weight:bold;">ĐẶT BÀN NGAY</button>
